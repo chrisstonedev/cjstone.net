@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Physics // CJStone</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="popup">
+    <label id="label"></label><br/>
+    <input type="reset" id="reset" value="0" class="control">
+    <input type="submit" id="divBtn" value="/" class="control"><br/>
+    <input type="submit" id="ABtn" value="A" class="base">
+    <input type="submit" id="kgBtn" value="kg" class="base">
+    <input type="submit" id="mBtn" value="m" class="base">
+    <input type="submit" id="sBtn" value="s" class="base"><br/>
+    <input type="submit" id="CBtn" value="C" disabled class="derived">
+    <input type="submit" id="FBtn" value="F" disabled class="derived">
+    <input type="submit" id="HBtn" value="H" disabled class="derived">
+    <input type="submit" id="HzBtn" value="Hz" disabled class="derived">
+    <input type="submit" id="JBtn" value="J" disabled class="derived">
+    <input type="submit" id="NBtn" value="N" disabled class="derived">
+    <input type="submit" id="PaBtn" value="Pa" disabled class="derived">
+    <input type="submit" id="TBtn" value="T" disabled class="derived">
+    <input type="submit" id="VBtn" value="V" disabled class="derived">
+    <input type="submit" id="WBtn" value="W" disabled class="derived">
+    <input type="submit" id="omegaBtn" value="&Omega;" disabled><br/>
+    <label id="measLbl"></label><br/>
+    <label id="abbrLbl"></label>
+</div>
+<script type="text/javascript">
+    var A = 0;
+    var kg = 0;
+    var m = 0;
+    var s = 0;
+    var label = document.getElementById("label");
+    var reset = document.getElementById("reset");
+    var divBtn = document.getElementById("divBtn");
+    var ABtn = document.getElementById("ABtn");
+    var kgBtn = document.getElementById("kgBtn");
+    var mBtn = document.getElementById("mBtn");
+    var sBtn = document.getElementById("sBtn");
+    var CBtn = document.getElementById("CBtn");
+    var FBtn = document.getElementById("FBtn");
+    var HBtn = document.getElementById("HBtn");
+    var HzBtn = document.getElementById("HzBtn");
+    var JBtn = document.getElementById("JBtn");
+    var NBtn = document.getElementById("NBtn");
+    var PaBtn = document.getElementById("PaBtn");
+    var TBtn = document.getElementById("TBtn");
+    var VBtn = document.getElementById("VBtn");
+    var WBtn = document.getElementById("WBtn");
+    var omegaBtn = document.getElementById("omegaBtn");
+    var measLbl = document.getElementById("measLbl");
+    var abbrLbl= document.getElementById("abbrLbl");
+    var multiDiv = 1;
+    var debug = 0;
+    enableButton(ABtn);
+    enableButton(kgBtn);
+    enableButton(mBtn);
+    enableButton(sBtn);
+    enableButton(divBtn);
+    enableButton(reset);
+    ABtn.addEventListener("click", function() {
+        A += multiDiv;
+        displayFormula();
+    });
+    kgBtn.addEventListener("click", function() {
+        kg += multiDiv;
+        displayFormula();
+    });
+    mBtn.addEventListener("click", function() {
+        m += multiDiv;
+        displayFormula();
+    });
+    sBtn.addEventListener("click", function() {
+        s += multiDiv;
+        displayFormula();
+    });
+    CBtn.addEventListener("click", function() {
+        A += multiDiv;
+        s += multiDiv;
+        displayFormula();
+    });
+    FBtn.addEventListener("click", function() {
+        A  += multiDiv *  2;
+        kg += multiDiv * -1;
+        m  += multiDiv * -2;
+        s  += multiDiv *  4;
+        displayFormula();
+    });
+    HBtn.addEventListener("click", function() {
+        A  += multiDiv * -2;
+        kg += multiDiv;
+        m  += multiDiv *  2;
+        s  += multiDiv * -2;
+        displayFormula();
+    });
+    HzBtn.addEventListener("click", function() {
+        s += multiDiv * -1;
+        displayFormula();
+    });
+    JBtn.addEventListener("click", function() {
+        kg += multiDiv;
+        m  += multiDiv *  2;
+        s  += multiDiv * -2;
+        displayFormula();
+    });
+    NBtn.addEventListener("click", function() {
+        kg += multiDiv;
+        m  += multiDiv;
+        s  += multiDiv * -2;
+        displayFormula();
+    });
+    PaBtn.addEventListener("click", function() {
+        kg += multiDiv;
+        m  += multiDiv * -1;
+        s  += multiDiv * -2;
+        displayFormula();
+    });
+    TBtn.addEventListener("click", function() {
+        A  += multiDiv * -1;
+        kg += multiDiv;
+        s  += multiDiv * -2;
+        displayFormula();
+    });
+    VBtn.addEventListener("click", function() {
+        A  += multiDiv * -1;
+        kg += multiDiv;
+        m  += multiDiv *  2;
+        s  += multiDiv * -3;
+        displayFormula();
+    });
+    WBtn.addEventListener("click", function() {
+        kg += multiDiv;
+        m  += multiDiv *  2;
+        s  += multiDiv * -3;
+        displayFormula();
+    });
+    omegaBtn.addEventListener("click", function() {
+        A  += multiDiv * -2;
+        kg += multiDiv;
+        m  += multiDiv *  2;
+        s  += multiDiv * -3;
+        displayFormula();
+    });
+    divBtn.addEventListener("click", function() {
+        if (multiDiv == 1) {
+            divBtn.style.border="3px blue inset";
+            divBtn.style.background='blue';
+            multiDiv = -1;
+        } else {
+            unsetDivide();
+        }
+    });
+    reset.addEventListener("click", function() {
+        A = 0;
+        kg = 0;
+        m = 0;
+        s = 0;
+        displayFormula();
+    });
+    function displayFormula() {
+        var formula = "";
+        var existing = false;
+        if (A != 0) {
+            formula = "A<sup>" + A + "</sup>";
+            existing = true;
+        }
+        if (kg != 0) {
+            if (existing) {
+                formula += " &#8226; ";
+            } else {
+                existing = true;
+            }
+            formula += "kg<sup>" + kg + "</sup>";
+        }
+        if (m != 0) {
+            if (existing) {
+                formula += " &#8226; ";
+            } else {
+                existing = true;
+            }
+            formula += "m<sup>" + m + "</sup>";
+        }
+        if (s != 0) {
+            if (existing) {
+                formula += " &#8226; ";
+            }
+            formula += "s<sup>" + s + "</sup>";
+        }
+        label.innerHTML = formula;
+        displayName();
+        unsetDivide();
+    }
+    function unsetDivide() {
+        divBtn.style.border="3px lightblue outset";
+        divBtn.style.background='lightblue';
+        multiDiv = 1;
+    }
+    document.addEventListener('keydown', function(event) {
+        if (debug > 0)
+            alert(event.keyCode);
+        switch(event.keyCode) {
+            case 48:  reset.click();    break;
+            case 65:  ABtn.click();     break;
+            case 67:  CBtn.click();     break;
+            case 70:  FBtn.click();     break;
+            case 72:  HBtn.click();     break;
+            case 74:  JBtn.click();     break;
+            case 75:  kgBtn.click();    break;
+            case 77:  mBtn.click();     break;
+            case 78:  NBtn.click();     break;
+            case 79:  omegaBtn.click(); break;
+            case 80:  PaBtn.click();    break;
+            case 83:  sBtn.click();     break;
+            case 84:  TBtn.click();     break;
+            case 86:  VBtn.click();     break;
+            case 87:  WBtn.click();     break;
+            case 90:  HzBtn.click();    break;
+            case 191: divBtn.click();   break;
+            case 192: debug = 2;
+        }
+        debug--;
+    }, true);
+    function enableButton(button) {
+        button.disabled = false;
+        button.style.background='lightblue';
+        button.style.border='3px outset lightblue'
+        button.style.color='darkblue';
+    }
+    function displayName() {
+        var abbreviation = "";
+        var measurement = "";
+        if (A==0) {
+            if (kg==0) {
+                if (m==0) {
+                    if(s==1) {
+                        abbreviation = "s - second";
+                        measurement = "time (t)";
+                    } else if (s==-1) {
+                        abbreviation = "Hz - hertz";
+                        enableButton(HzBtn);
+                    }
+                }
+                if (m==1) {
+                    if (s==0) {
+                        abbreviation = "m - meter";
+                        measurement = "displacement (x)";
+                    }
+                    if (s==-1)
+                        measurement = "velocity (v)";
+                    else if (s==-2)
+                        measurement = "acceleration (a)";
+                }
+            } else if (kg==1) {
+                if (m==0) {
+                    if (s==0) {
+                        abbreviation = "kg - kilogram";
+                        measurement = "mass (m)";
+                    }
+                } else if (m==1) {
+                    if (s==-2) {
+                        abbreviation = "N - newton";
+                        measurement = "force (F)";
+                        enableButton(NBtn);
+                    }
+                } else if (m==2) {
+                    if (s==-2) {
+                        abbreviation = "J - joule";
+                        measurement = "work (W) or energy (E)";
+                        enableButton(JBtn);
+                    } else if (s==-3) {
+                        abbreviation = "W - watt";
+                        measurement = "energy conversion (W)";
+                        enableButton(WBtn);
+                    }
+                } else if (m==-1) {
+                    if (s==-2) {
+                        abbreviation = "Pa - pascal";
+                        measurement = "pressure (P)";
+                        enableButton(PaBtn);
+                    }
+                }
+            }
+        }
+        else if (A==1) {
+            if (kg==0) {
+                if (m==0) {
+                    if (s==0) {
+                        abbreviation = "A - ampere";
+                        measurement = "current (I)";
+                    } else if (s==1) {
+                        abbreviation = "C - coulomb";
+                        measurement = "charge (q)";
+                        enableButton(CBtn);
+                    }
+                }
+            }
+        }
+        else if (A==2) {
+            if (kg==-1) {
+                if (m==-2) {
+                    if (s==4) {
+                        abbreviation = "F - farad";
+                        measurement = "capacitance (C)";
+                        enableButton(FBtn);
+                    }
+                }
+            }
+        }
+        else if (A==-1) {
+            if (kg==1) {
+                if (m==0) {
+                    if (s==-2) {
+                        abbreviation = "T - tesla";
+                        measurement = "magnetic field (B)";
+                        enableButton(TBtn);
+                    }
+                } else if (m==2) {
+                    if (s==-3) {
+                        abbreviation = "V - volt";
+                        measurement = "voltage (V)";
+                        enableButton(VBtn);
+                    }
+                }
+            }
+        }
+        else if (A==-2) {
+            if (kg==1) {
+                if (m==2) {
+                    if (s==-3) {
+                        abbreviation = "(Omega) - ohm";
+                        measurement = "resistance (R)";
+                        enableButton(omegaBtn);
+                    } else if (s==-2) {
+                        abbreviation = "H - henry";
+                        measurement = "inductance (L)";
+                        enableButton(HBtn);
+                    }
+                }
+            }
+        }
+        abbrLbl.innerHTML = abbreviation;
+        measLbl.innerHTML = measurement;
+    }
+</script>
+</body>
+</html>

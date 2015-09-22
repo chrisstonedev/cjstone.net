@@ -1,0 +1,7 @@
+input{background:darkblue;border:3px inset darkblue;color:lightblue;}
+body{background:black;color:white;}
+input.control{font-size:20pt;width:232px;}
+input.base{font-size:16pt;width:114px;}
+input.derived{font-size:12pt;width:40px;}
+label{font-size:20pt;display:block;text-align:center;height:30pt;line-height:30pt;}
+div#popup{margin:0 auto;width:468px;}

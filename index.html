@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Christopher Stone</title>
+    <meta name="viewport" content="width=device-width, user-scalable=1, initial-scale=1">
+    <link rel="stylesheet" href="full.css" type="text/css"/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Slab' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="simple.css" type="text/css" media="screen, handheld, print, projection"  />
+    <link rel="stylesheet" href="mobile.css" type="text/css" media="screen and (min-device-width:320px)"  />
+    <link rel="stylesheet" href="full.css" type="text/css"
+          media="screen and (min-device-width:768px) and (min-width:768px), print, projection"  />
+</head>
+<body>
+<header><p>Christopher Stone</p></header>
+<nav>
+    <a href="#developer">Developer</a> |
+    <a href="#musician">Musician</a> |
+    <a href="#runner">Runner</a>
+</nav>
+<section>
+    <h2><a name="developer" id="developer" class="anchor">&nbsp;</a>Development</h2>
+    <article>
+        <p>Experienced in several programming languages across different platforms, I stay busy with various projects to
+            stay fresh.</p>
+        <p>I have created apps as small as a simple checksum validator for Windows using C# to a published complete
+            fitness planning and tracking application on Android using Java. More examples can be seen below.</p>
+        <p>In the future, I plan to continue development on existing projects as well as continuing to challenge myself
+            to learn more and try more. For example, I am currently planning the creation of a podcast series to
+            premiere November 2015 and my first playable mobile game to be published by early 2016.</p>
+        <section id="development_icons">
+            <button type="submit" name="gymrattrax" value="gymrattrax" id="btn_gymrattrax">
+                <img src="media/gymrattrax.png" alt="Image for GymRatTrax" title="Image for GymRatTrax"/>
+            </button><button type="submit" name="pushy" value="pushy" id="btn_pushy">
+                <img src="media/pushy.png" alt="Image for Pushy" title="Image for Pushy"/>
+            </button><button type="submit" name="bookshop" value="bookshop" id="btn_bookshop">
+                <img src="media/bookshop.png" alt="Image for Bookshop" title="Image for Bookshop"/>
+            </button><button type="submit" name="physics_units" value="physics_units" id="btn_physics">
+                <img src="media/physics_units.png" alt="Image for Physics Units" title="Image for Physics Units"/>
+            </button><button type="submit" name="file_validator" value="file_validator" id="btn_validator">
+                <img src="media/file_validator.png" alt="Image for File Validator" title="Image for File Validator"/>
+            </button>
+        </section>
+        <section id="development_box">
+            <div id="txt_gymrattrax">
+                <div class="dev_img_holder" id="gymrattrax_img_holder">
+                    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+                    <script src="media/jquery.cycle.all.js" type="text/javascript"></script>
+                    <script type="text/javascript">// <![CDATA[
+                    var slideshow = jQuery.noConflict();
+                    slideshow(document).ready(function() {
+                        if(!(navigator.userAgent.match(/Android/i)
+                                        || navigator.userAgent.match(/webOS/i)
+                                        || navigator.userAgent.match(/iPhone/i)
+                                        || navigator.userAgent.match(/iPod/i)
+                                        || navigator.userAgent.match(/BlackBerry/i)
+                                )){
+                            slideshow('div#gymrattrax-slideshow').cycle({speed: 300, timeout: 5000, random: 1});
+                            slideshow('div#validator-slideshow').cycle({speed: 300, timeout: 5000, random: 1});
+                        }
+                    });
+                    // ]]>
+                    </script>
+                    <div id="gymrattrax-slideshow">
+                        <img alt="GymRatTrax" src="media/gymrattrax_1.png" style="border:0;" title="GymRatTrax">
+                        <img alt="GymRatTrax" src="media/gymrattrax_2.png" style="border:0;" title="GymRatTrax">
+                        <img alt="GymRatTrax" src="media/gymrattrax_3.png" style="border:0;" title="GymRatTrax">
+                    </div>
+                </div>
+
+                <span class="title">GymRatTrax</span><br/>
+                <span class="attribute">Platform</span>: <img src="media/android_text.png" alt="Android" title="Android"/> via <img src="media/java_text.png" alt="Java" title="Java"/> with <img src="media/sqlite_text.png" alt="SQLite" title="SQLite"/><br/>
+                <span class="attribute">Availability</span>: <a href="https://play.google.com/store/apps/details?id=com.gymrattrax.scheduler">Google Play Store</a><br/>
+                <span class="attribute">Source</span>: <a href="https://github.com/GymRatTrax/GymRatTrax-FitnessScheduler">GitHub</a><br/>
+                Started as a senior academic project, I worked as team leader and lead developer on this project.
+                GymRatTrax is a personal fitness scheduler application made to replace a fitness planner with features
+                such as adaptive suggestions, reverse calorie search, and robust statistics. This is the first Android
+                application I have developed that has been published to the Google Play Store.
+            </div>
+            <div id="txt_pushy"><span class="title">Pushy</span><br/>
+                <span class="attribute">Platform</span>: <img src="media/android_text.png" alt="Android" title="Android"/> via <img src="media/java_text.png" alt="Java" title="Java"/> with <img src="media/mysql_text.png" alt="MySQL" title="MySQL"/><br/>
+                <span class="attribute">Availability</span>: In Progress<br/>
+                <span class="attribute">Source</span>: <a href="https://github.com/christopher-stone/pushy">GitHub</a><br/>
+                Set goals and get help sticking to them. Short-term goals (e.g. leave the house to go
+                to the gym) will result in aggressive alarms. Long-term goals (e.g. stop eating dessert late at
+                night) will result in periodic notifications that will help keep user on track.
+            </div>
+            <div id="txt_bookshop"><span class="title">Bookshop</span><br/>
+                <span class="attribute">Platform</span>: <img src="media/php_text.png" alt="PHP" title="PHP"/> with <img src="media/mysql_text.png" alt="MySQL" title="MySQL"/> and <img src="media/html5_text.png" alt="HTML5" title="HTML5"/><br/>
+                <span class="attribute">Availability</span>: <a href="bookshop" target="_blank">Live demo</a><br/>
+                <span class="attribute">Source</span>: <div class="tooltip_parent">Private<span class="tooltip_child">
+                    Source code is available upon request, but as it was submitted as part of a specific
+                    deliverable in an assignment, source code will not be published publicly.
+                </span></div><br/>
+                The design of an online store with inventory and checkout functionality with secure
+                registration and login procedures. Data integrity and user security are maintained while preventing common
+                vulnerabilities (e.g. SQLI and XSS).
+            </div>
+            <div id="txt_physics"><span class="title">Physics Units</span><br/>
+                <span class="attribute">Platform</span>: <img src="media/javascript_text.png" alt="Javascript" title="Javascript"/><br/>
+                <span class="attribute">Availability</span>: <a href="physics" target="_blank">Live demo</a><br/>
+                <span class="attribute">Source</span>: Visible in above demo<br/>
+                A simple web tool in which basic SI units, such as kilograms and meters, can be
+                multiplied and divided to reveal advanced derived units, such as Newtons and Joules. When derived units
+                are discovered, they can be used themselves as shortcuts. Keyboard shortcuts can also be used.
+            </div>
+            <div id="txt_validator">
+                <div class="dev_img_holder" id="validator_img_holder">
+                    <div id="validator-slideshow">
+                        <img alt="Validator" src="media/validator_1.png" style="border:0;" title="Validator">
+                        <img alt="Validator" src="media/validator_2.png" style="border:0;" title="Validator">
+                    </div>
+                </div>
+                <span class="title">Validator</span><br/>
+                <span class="attribute">Platform</span>: <img src="media/c_sharp_text.png" alt="C#" title="C#"/><br/>
+                <span class="attribute">Availability</span>: Public release coming soon<br/>
+                <span class="attribute">Source</span>: <a href="https://github.com/christopher-stone/Validator" target="_blank">GitHub</a> <br/>
+                Windows application that quickly returns MD5 and SHA-1 checksums for any provided file.
+                Target values can be copied and pasted to the side with an indicator appearing to quickly tell the
+                user if the value match or not.
+            </div>
+        </section>
+    </article>
+</section>
+<script>
+    var btnGymRatTrax = document.getElementById("btn_gymrattrax");
+    var btnPushy = document.getElementById("btn_pushy");
+    var btnBookshop = document.getElementById("btn_bookshop");
+    var btnPhysicsUnits = document.getElementById("btn_physics");
+    var btnValidator = document.getElementById("btn_validator");
+    var txtGymRatTrax = document.getElementById("txt_gymrattrax");
+    var txtPushy = document.getElementById("txt_pushy");
+    var txtBookshop = document.getElementById("txt_bookshop");
+    var txtPhysicsUnits = document.getElementById("txt_physics");
+    var txtValidator = document.getElementById("txt_validator");
+    var currentText = null;
+    txtGymRatTrax.style.display = 'none';
+    txtPushy.style.display = 'none';
+    txtBookshop.style.display = 'none';
+    txtPhysicsUnits.style.display = 'none';
+    txtValidator.style.display = 'none';
+
+    btnGymRatTrax.addEventListener("click", function() { displayText(txtGymRatTrax); });
+    btnPushy.addEventListener("click", function() { displayText(txtPushy); });
+    btnBookshop.addEventListener("click", function() { displayText(txtBookshop); });
+    btnPhysicsUnits.addEventListener("click", function() { displayText(txtPhysicsUnits); });
+    btnValidator.addEventListener("click", function() { displayText(txtValidator); });
+    function displayText(text) {
+        if (currentText != null) {
+            if (currentText != text) {
+                currentText.style.overflowY = 'hidden';
+                currentText.style.animationName = 'collapse';
+                currentText.style.animationDuration = '1s';
+                currentText.style.animationFillMode = 'forwards';
+                setTimeout(function () {
+                    expandText(text)
+                }, 1000);
+            }
+        } else {
+            expandText(text);
+        }
+    }
+    function expandText(text) {
+        if (currentText != null) {
+            currentText.style.display = 'none';
+        }
+        text.style.display = 'block';
+        text.style.overflowY = 'auto';
+        text.style.animationName = 'expand';
+        text.style.animationDuration = '1s';
+        text.style.animationFillMode = 'forwards';
+        currentText = text;
+    }
+</script>
+<section>
+    <h2><a name="musician" id="musician" class="anchor">&nbsp;</a>Musician</h2>
+    <article>
+        <p>In my spare time, I enjoy writing and recording music. I am working to collect old samples and will publish
+            new pieces as I can record them. In November 2015, I will begin publishing my first podcast of weekly
+            longform pieces.</p>
+        <audio controls="controls" src="media/time_and_again.mp3"></audio>
+        <p>Here is a sample demo of an instrumental song written in 2012, called "Time and Again."</p>
+    </article>
+</section>
+<section>
+    <h2><a name="runner" id="runner" class="anchor">&nbsp;</a>Runner</h2>
+    <article class="runner">
+        <img src="media/2014bunny.jpg" title="Recipient of the 2014 Grand Prix Series David Jordan Bunny Award and the
+        2014 Triple Peach Medal" alt="Recipient of the 2014 Grand Prix Series David Jordan Bunny Award and the 2014
+        Triple Peach Medal"/>
+        When I'm not working on one of my projects, I like to go for a long-distance run. Running as a hobby didn't
+        start for me until 2013. Later that year, I ran my first 5K race, and a year after that, I ran my first full
+        marathon. It's a way to get outside, be with nature, and become acquainted with the town. I am a member of the
+        Atlanta Track Club and attend all "Grand Prix" and "Triple Peach" events, the latter of which includes the AJC
+        Peachtree Road Race.
+    </article>
+</section>
+<script>
+    var header = document.querySelector('header'),
+            header_height = parseInt(getComputedStyle(header).height.split('px')[0]),
+            title = header.querySelector('p'),
+            title_height = parseInt(getComputedStyle(title).height.split('px')[0]),
+            nav = document.querySelector('nav'),
+            nav_height = parseInt(getComputedStyle(nav).height.split('px')[0]),
+            fix_class = 'is_fixed',
+            header_shadow = 'header_shadow';
+    function stickyScroll() {
+        if (window.pageYOffset > (header_height - title_height) / 2) {
+            title.classList.add(fix_class);
+        } else if (window.pageYOffset < (header_height - title_height) / 2){
+            title.classList.remove(fix_class);
+        }
+        if (window.pageYOffset > header_height - title_height) {
+            title.classList.add(header_shadow);
+        } else if (window.pageYOffset < header_height - title_height){
+            title.classList.remove(header_shadow);
+        }
+        if (window.pageYOffset > header_height + (nav_height / 2)) {
+            nav.classList.add(fix_class);
+        } else if (window.pageYOffset < header_height + (nav_height / 2)) {
+            nav.classList.remove(fix_class);
+        }
+    }
+    var test = window.addEventListener("scroll", stickyScroll, false);
+    if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize");
+    }
+</script>
+</body></html>

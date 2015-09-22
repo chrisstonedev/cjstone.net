@@ -1,0 +1,221 @@
+html,body {
+    background-color: #d0d0df;
+    color: #223;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-weight: 500;
+    font-size: 12pt;
+}
+body{
+    overflow-x:hidden;
+}
+a:link,a:visited,a:active{color:#225;}
+a:hover{color:#555;}
+.name,.heading,.link,header{line-height:inherit;text-align:center;margin:0;}
+.name,.link,body{font-family:'Roboto Slab','Times New Roman',serif;}
+.name{font-size:xx-large;}
+.link{font-size:large;margin-top:40px;}
+.heading,h1,h2,header{font-family:'Roboto',Arial,sans-serif;}
+.heading,header{font-size:large;}
+header{
+    padding:50px 20px;
+    box-shadow: #88f 0 0 15px 5px;
+    margin:0 auto;
+    height: 50%;
+    text-align: center;
+    background: lightsteelblue;
+    width: 100%;}
+p,li{line-height:15pt;font-family:'Roboto Slab','Times New Roman',serif;}
+header p{
+    margin: 0;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 1;
+    color: white;
+}
+aside#left{float:left;}
+aside#right{float:right;}
+section{clear:both;margin:1rem;}
+aside{height:200px;width:200px;}
+.portfolio_left,.portfolio_right,.portfolio_top,.portfolio_bottom{
+    border: solid black;
+    padding:10px;margin:10px;
+}
+.portfolio_left,.portfolio_right{width:160px;}
+.portfolio_left img,.portfolio_right img{width:160px;}
+.portfolio_left,.portfolio_top{background:lightblue;}
+.portfolio_right,.portfolio_bottom{background:lightsteelblue;}
+.portfolio_left{border-radius:40px 0 40px 40px;border-width:1px 0 1px 1px;}
+.portfolio_right{border-radius:40px 40px 40px 0;border-width:1px 1px 1px 0;}
+.portfolio_top{border-radius:0 40px 40px 0;border-width:1px 1px 1px 0;}
+.portfolio_bottom{border-radius:40px 0 0 40px;border-width:1px 0 1px 1px;}
+h2 a.anchor{
+    position:relative;
+    top:-70px;
+    font-size:0;
+}
+header p.is_fixed {
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 103%;
+    line-height: 1.5;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    background: lightsteelblue;
+	z-index:5;
+}
+header p.header_shadow {
+    box-shadow: #88f 0 0 20px 10px;
+}
+div.tooltip_parent{
+    display:inline;
+    background:rgba(255,255,255,0.25);
+    border:black dashed 1px;
+}
+div.tooltip_parent:hover .tooltip_child{
+    display:inline;
+}
+.tooltip_child {
+    display:none;
+    background:#ddd;
+    padding:8px;
+    position:absolute;
+    z-index:1000;
+    width:200px;
+    margin-top:12pt;
+    margin-left:6pt;
+}
+nav.is_fixed {
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: 1.5;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    z-index:400;
+}
+nav{
+    text-align:right;
+}
+header{
+    font-size:32pt;
+}
+section#development_icons button{width:100px;height:100px;border-width:3px;padding:0;}
+section#development_icons button img{width:94px;height:94px;}
+img.missing{display:none;}
+article.runner img,audio,article.other img{float:right;margin-left:15px;max-width:50%;}
+h2{clear:both;}
+section#development_icons{margin-bottom:0;}
+section#development_box{
+    margin-top:0;
+    overflow:hidden;
+    /*overflow-x:hidden;*/
+    /*overflow-y:scroll;*/
+}
+button#btn_gymrattrax,section#development_box div#txt_gymrattrax {
+    border-color: #ff9800;
+    background: #ff9800;
+}
+button#btn_pushy,section#development_box div#txt_pushy{
+    border-color:lightseagreen;
+    background:lightseagreen;}
+button#btn_bookshop,section#development_box div#txt_bookshop{
+    border-color:lightgreen;
+    background:lightgreen;}
+button#btn_physics,section#development_box div#txt_physics{
+    border-color:lightpink;
+    background:lightpink;}
+button#btn_validator,section#development_box div#txt_validator{
+    border-color:lightblue;
+    background:lightblue;}
+section#development_icons button{
+    border-width:5px;
+    height:104px;
+    width:104px;
+}
+section#development_box>div{
+    border:10px inset;
+    position:relative;
+    /*overflow:hidden;*/
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+section#development_box>div>span.title{
+    font-weight:bold;
+    font-size:18pt;
+    font-family:'Roboto',Arial,sans-serif;
+}
+div.dev_img_holder{
+    float:right;
+}
+span.attribute{
+    font-variant:small-caps;
+}
+
+/* The animation code */
+@keyframes expand {
+    from {top:-20px;height:0;}
+    to {top:0;height:382px;}
+}
+@keyframes collapse {
+    from {top:0;height:382px;}
+    to {top:-20px;height:0;}
+}
+
+::-webkit-scrollbar {
+    width:10px;
+    height:10px;
+} /* this targets the default scrollbar (compulsory) */
+::-webkit-scrollbar-track {
+    background-color:transparent;
+} /* the new scrollbar will have a flat appearance with the set background color */
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    /*border:1px solid rgba(255,255,255,0.3);*/
+    border-radius:5px;
+} /* this will style the thumb, ignoring the track */
+
+/*::-webkit-scrollbar-button {*/
+    /*background-color: rgba(0, 0, 0, 0.5);*/
+/*} /!* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) *!/*/
+
+::-webkit-scrollbar-corner {
+    background-color:#d0d0df;
+} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
+
+div.dev_img_holder {
+    border:0;
+    padding:0;
+    margin:0;
+}
+div#gymrattrax-slideshow {
+    position:relative;
+    top:31px;
+    left:29px;
+}
+div#gymrattrax_img_holder{
+    width:237px;
+    height:382px;
+    background-image:url("media/nexus.png");
+}
+div#validator_img_holder{
+    width:470px;
+    height:240px;
+    background-image:url("media/lenovo.png");
+}
+div#validator-slideshow {
+    position:relative;
+    top:66px;
+    left:0;
+}
