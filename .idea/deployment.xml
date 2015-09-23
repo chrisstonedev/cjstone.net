@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="DreamHost CJStone" uploadOnCheckin="8a22c2bb-3446-4a22-9f28-a11ce173658a">
+    <serverData>
+      <paths name="DreamHost CJStone">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/cjstone.net" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myUploadOnCheckinName" value="DreamHost CJStone" />
+  </component>
+</project>
