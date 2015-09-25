@@ -1,7 +1,5 @@
 <?php
-$host = "ACCESS_DENIED";
-$user = "ACCESS_DENIED";
-$pass = "ACCESS_DENIED";
+include_once("config.php");
 
 if ( isset($_POST['action']) and $_POST['action'] != "") {
 	if ($_POST['action'] == "watch") {
@@ -196,4 +194,3 @@ if ( isset($_POST['action']) and $_POST['action'] != "") {
 } else {
 	echo 'Could not establish connection to database.';
 }
-?>
